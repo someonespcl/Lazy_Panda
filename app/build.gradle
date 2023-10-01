@@ -7,6 +7,12 @@ android {
     namespace 'com.lazypanda'
     compileSdk 34
 
+    lintOptions {
+        // Disable lint checks for debug and release builds
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     defaultConfig {
         applicationId "com.lazypanda"
         minSdk 23

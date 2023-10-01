@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ChatActivity"
+    android:paddingTop="30dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@drawable/light_round_btn"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:id="@+id/appbar">
+
+        <ImageView
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:src="@drawable/p"
+            android:layout_marginRight="8dp"
+            android:id="@+id/chat_user_image" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:id="@+id/chat_user_name"
+                android:text="Madhav Poola" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:id="@+id/user_online"
+                android:text="Online" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none"
+            android:paddingEnd="8dp"
+            android:paddingBottom="5dp"
+            android:fastScrollEnabled="true"
+            android:id="@+id/chat_recycler_view"
+            android:overScrollMode="never"
+            android:paddingTop="5dp"
+            android:scrollingCache="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:minHeight="46dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/item_input_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_toStartOf="@+id/item_send_card_parent"
+            android:layout_marginEnd="8dp"
+            android:minHeight="46dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginStart="8dp"
+            android:id="@+id/item_input_card_parent">
+
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="bottom"
+                android:background="@drawable/light_round_btn"
+                android:layout_gravity="bottom">
+
+                <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_toEndOf="@+id/item_emoji_icon_container"
+                    android:minHeight="46dp">
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:imeOptions="actionDone"
+                        android:layout_centerVertical="true"
+                        android:importantForAutofill="no"
+                        android:textColor="@android:color/white"
+                        android:scrollbars="vertical"
+                        android:background="@android:color/transparent"
+                        android:hint="Type here..."
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingBottom="8dp"
+                        android:backgroundTint="@null"
+                        android:layout_alignParentBottom="true"
+                        android:paddingHorizontal="8dp"
+                        android:maxLines="6"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:paddingTop="8dp"
+                        android:id="@+id/chat_user_msg" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_height="46dp"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="8dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/item_emoji_icon_container"
+                    android:layout_gravity="bottom">
+
+                    <ImageView
+                        android:layout_height="24dp"
+                        android:layout_width="24dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/emoji_outline"
+                        android:focusable="true"
+                        android:id="@+id/item_emoji_icon" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:minHeight="46dp"
+            android:layout_alignParentEnd="true"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/item_send_card_parent">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/light_round_btn"
+                android:clickable="true"
+                android:minHeight="46dp"
+                android:focusable="true"
+                android:id="@+id/item_send_click_parent">
+
+                <ImageButton
+                    android:layout_height="24dp"
+                    android:layout_width="24dp"
+                    android:background="@android:color/transparent"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/send_outline"
+                    android:id="@+id/send_msg_btn" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</LinearLayout>

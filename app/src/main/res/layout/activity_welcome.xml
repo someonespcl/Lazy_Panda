@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".activities.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/top_circle_view"
+        android:layout_height="250dp"
+        android:layout_width="250dp"
+        android:src="@drawable/top_circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:layout_height="225dp"
+        android:layout_width="225dp"
+        android:src="@drawable/bottom_mid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_height="220dp"
+        android:layout_width="220dp"
+        android:src="@drawable/circle"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/_minus8sdp" />
+    
+    <com.github.mmin18.widget.RealtimeBlurView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/blurView"
+        app:realtimeBlurRadius="7dp"
+        app:realtimeOverlayColor="@android:color/transparent" />
+    
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_height="@dimen/_300sdp"
+            android:layout_width="@dimen/_300sdp"
+            app:lottie_rawRes="@raw/lazy_panda"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:id="@+id/lazypandaAnim" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="@dimen/_minus50sdp"
+            app:layout_constraintTop_toBottomOf="@id/lazypandaAnim"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/poppins_medium"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:justificationMode="inter_word"
+            android:id="@+id/lazypandaQuote"
+            android:text="“Pandas are proof that you can be fat, lazy, and still be Loved by everyone.”" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/_14sdp"
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="27sp"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/loginBtn"
+            android:text="Dont\nBe Lazy in\nDoing This."
+            android:id="@+id/subText" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:backgroundTint="@null"
+            android:onClick="goToLoginScreen"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/registerBtn"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/light_round_btn"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/poppins_semibold"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/loginBtn"
+            android:text="Login" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:backgroundTint="@null"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/round_btn"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/poppins_medium"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Register"
+            android:onClick="goToRegisterA"
+            android:id="@+id/registerBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

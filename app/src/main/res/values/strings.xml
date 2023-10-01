@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lazy Panda 🐼</string>
+    <string name="back"><u>Back</u></string>
+    <string name="hello"><u>Hello</u></string>
+    <string name="verifyEmail"><u>Verify Your Email Address.</u></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

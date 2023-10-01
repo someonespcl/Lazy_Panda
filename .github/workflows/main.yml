@@ -23,10 +23,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: buildtool/setup-buildtools-action@v1
-        with:
-          buildtools-version: 0.22.3
-      - run: build
 
       # Set Current Date As Env Variable
       - name: Set current date as env variable

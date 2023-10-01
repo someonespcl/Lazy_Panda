@@ -42,6 +42,25 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
+      - name: Set Build Tools Version
+        run: echo "build_tools_version=34.0.4" >> $GITHUB_ENV  
+
+      # Run Build Project with the specified build tools version
+      - name: Build gradle project
+      run: ./gradlew build --build-tool-version ${{ env.build_tools_version }}
+
+      # Create APK Debug with the specified build tools version
+      - name: Build apk debug project (APK) - ${{ env.main_project_module }} module
+      run: ./gradlew assembleDebug --build-tool-version ${{ env.build_tools_version }}
+
+      # Create APK Release with the specified build tools version
+      - name: Build apk release project (APK) - ${{ env.main_project_module }} module
+      run: ./gradlew assemble --build-tool-version ${{ env.build_tools_version }}
+
+      # Create Bundle AAB Release with the specified build tools version
+      - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
+      run: ./gradlew ${{ env.main_project_module }}:bundleRelease --build-tool-version ${{ env.build_tools_version }}  
+
       # Run Tests Build
       - name: Run gradle tests
         run: ./gradlew test
